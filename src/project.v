@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Your Name
+ * Copyright (c) 2024 Sagar Dev Achar
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -16,12 +16,43 @@ module tt_um_demosiine_sda (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
-  assign uio_oe  = 0;
+    wire [1:0] r, g, b;
+    wire audio;
+  
+    wire [9:0] x, y;
+    wire h_sync, v_sync;
+    wire frame_active;
+    
+    vga_controller vga_controller_1 (
+        .x(x), .y(y),
+        .h_sync(h_sync), .v_sync(v_sync),
+        .frame_active(frame_active),
+        .clk(clk), .rst_n(rst_n)
+    );
+    
+    /*graphics_engine graphics_engine_1 (
+        .r(r), .g(g), .b(b),
+        .x(x), .y(y),
+        .frame_active(frame_active), .v_sync(v_sync),
+        .clk(clk), .rst_n(rst_n)
+    );*/
+    
+    audio_engine audio_engine_1 (
+        .audio(audio),
+        .clk(clk), .rst_n(rst_n)
+    );
+    
+    // All output pins must be assigned. If not used, assign to 0.
+    assign uo_out  = {
+        h_sync, b[0], g[0], r[0],
+        v_sync, b[1], g[1], r[1]
+    };
+    assign uio_out = {audio, 7'd0};
+    assign uio_oe  = 8'b1000_0000;
 
-  // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+    assign {r, g, b} = 6'b11_11_11;
+    
+    // List all unused inputs to prevent warnings
+    wire _unused = &{ena, ui_in, uio_in};
 
 endmodule

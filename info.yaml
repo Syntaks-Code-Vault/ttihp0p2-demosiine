@@ -18,6 +18,9 @@ project:
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "project.v"
+    - "vga_controller.v"
+    - "audio_engine.v"
+    - "freq_synth.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
@@ -32,14 +35,14 @@ pinout:
   ui[7]: ""
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "Video Red MSB"
+  uo[1]: "Video Green MSB"
+  uo[2]: "Video Blue MSB"
+  uo[3]: "Video V-Sync"
+  uo[4]: "Video Red LSB"
+  uo[5]: "Video Green LSB"
+  uo[6]: "Video Blue LSB"
+  uo[7]: "Video H-Sync"
 
   # Bidirectional pins
   uio[0]: ""
@@ -49,7 +52,7 @@ pinout:
   uio[4]: ""
   uio[5]: ""
   uio[6]: ""
-  uio[7]: ""
+  uio[7]: "Audio Output"
 
 # Do not change!
 yaml_version: 6
