@@ -53,6 +53,6 @@ module tt_um_demosiine_sda (
     assign {r, g, b} = 6'b11_11_11;
     
     // List all unused inputs to prevent warnings
-    wire _unused = &{ena, ui_in, uio_in};
+    wire _unused = &{ena, ui_in, uio_in, x, y, frame_active};
 
 endmodule

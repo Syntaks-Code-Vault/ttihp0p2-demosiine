@@ -12,7 +12,7 @@ module freq_synth(
     always @ (posedge synth_clk or negedge rst_n) begin
         if (~active | ~rst_n) begin
             audio_reg <= 1'd0;  
-            hp_ctr <= 1'd1;
+            hp_ctr <= 7'd1;
         end else begin
             if (hp_ctr == hp) begin
                 hp_ctr <= 1'd1;
