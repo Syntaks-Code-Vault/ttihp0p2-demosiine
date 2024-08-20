@@ -97,7 +97,7 @@ module audio_engine(
     wire [6:0] seq_hp;
     
     reg [17:0] counter;
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if (~rst_n)
           counter <= 18'd0;
         else
@@ -107,7 +107,7 @@ module audio_engine(
     assign synth_clk = counter[10]; 
     assign seq_clk = counter[17];
     
-    always @(posedge seq_clk or negedge rst_n) begin
+    always @(posedge seq_clk) begin
         if (~rst_n) begin
             seq_ctr <= 5'd0;
             seq_time <= 7'd0;
