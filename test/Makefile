@@ -5,7 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = *.v
+PROJECT_SOURCES = project.v
 # PROJECT_SOURCES += vga_controller.v
 # PROJECT_SOURCES += graphics_engine.v
 # PROJECT_SOURCES += overlay_creator.v
