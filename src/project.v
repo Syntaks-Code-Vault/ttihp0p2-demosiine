@@ -49,8 +49,6 @@ module tt_um_demosiine_sda (
     };
     assign uio_out = {audio, 7'd0};
     assign uio_oe  = 8'b1000_0000;
-
-    assign {r, g, b} = 6'b11_11_11;
     
     // TODO: Unused
     // wire _unused = &{ena, ui_in, uio_in, x, y, frame_active};
