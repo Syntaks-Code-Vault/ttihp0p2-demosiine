@@ -5,7 +5,17 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = $(wildcard *.v)
+PROJECT_SOURCES = project.v
+PROJECT_SOURCES += vga_controller.v
+PROJECT_SOURCES += graphics_engine.v
+PROJECT_SOURCES += overlay_creator.v
+PROJECT_SOURCES += text_demosiine.v
+PROJECT_SOURCES += text_tt08.v
+PROJECT_SOURCES += text_sda.v
+PROJECT_SOURCES += sine_layer.v
+PROJECT_SOURCES += audio_engine.v
+PROJECT_SOURCES += freq_synth.v
+					
 
 ifneq ($(GATES),yes)
 
