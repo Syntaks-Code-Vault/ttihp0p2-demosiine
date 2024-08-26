@@ -130,5 +130,6 @@ module audio_engine(
         .active(seq_active)
     );
     
-    wire _unused = 0;
+    // TODO: Unused
+    // wire _unused = 0;
 endmodule

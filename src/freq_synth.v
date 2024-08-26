@@ -24,5 +24,6 @@ module freq_synth(
     
     assign audio = audio_reg & active;
     
-    wire _unused = 0;
+    // TODO: Unused
+    // wire _unused = 0;
 endmodule

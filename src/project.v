@@ -30,12 +30,12 @@ module tt_um_demosiine_sda (
         .clk(clk), .rst_n(rst_n)
     );
     
-    /*graphics_engine graphics_engine_1 (
+    graphics_engine graphics_engine_1 (
         .r(r), .g(g), .b(b),
         .x(x), .y(y),
         .frame_active(frame_active), .v_sync(v_sync),
         .clk(clk), .rst_n(rst_n)
-    );*/
+    );
     
     audio_engine audio_engine_1 (
         .audio(audio),
@@ -52,7 +52,7 @@ module tt_um_demosiine_sda (
 
     assign {r, g, b} = 6'b11_11_11;
     
-    // List all unused inputs to prevent warnings
-    wire _unused = &{ena, ui_in, uio_in, x, y, frame_active};
+    // TODO: Unused
+    // wire _unused = &{ena, ui_in, uio_in, x, y, frame_active};
 
 endmodule

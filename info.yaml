@@ -19,6 +19,12 @@ project:
   source_files:
     - "project.v"
     - "vga_controller.v"
+    - "graphics_engine.v"
+    - "overlay_creator.v"
+    - "text_demosiine.v"
+    - "text_tt08.v"
+    - "text_sda.v"
+    - "sine_layer.v"
     - "audio_engine.v"
     - "freq_synth.v"
 
