@@ -139,7 +139,5 @@ module sine_layer (
             default: sine_rgb = 6'b00_00_00;
         endcase
     end
-
-    // TODO: Unused
-    // wire _unused = &{qsine_flip_x[5:4]};
+    
 endmodule

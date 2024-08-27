@@ -2,9 +2,10 @@
 
 module graphics_engine(
     output wire [1:0] r, g, b,
-    input wire [9:0] x, y,
+    input wire [9:0] x, 
+    input wire [8:0] y,
     input wire frame_active, v_sync, 
-    input wire clk, rst_n
+    input wire rst_n
     );
     
     wire [5:0] sine_off_y, sine_bg_off_y;
@@ -19,7 +20,7 @@ module graphics_engine(
         if (~rst_n)
             ctr <= 0;
         else
-            ctr <= ctr + 1;
+            ctr <= ctr + 1'd1;
     end
 
     assign anim_x = x + ctr;
@@ -63,6 +64,5 @@ module graphics_engine(
         )
     ) : 6'b00_00_00;
     
-    // TODO: Unused
-    // wire _unused = &{x[7:0], y[7:0], rst_n, v_sync};
+    wire _unused = &{sine_off_y[5], sine_bg_off_y[5], anim_x[9], anim_x[2:0], anim_2x[9:8], anim_2x[1:0]};
 endmodule

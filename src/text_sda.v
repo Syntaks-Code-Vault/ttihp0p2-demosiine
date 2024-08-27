@@ -2,7 +2,8 @@
 
 module text_sda(
     output wire overlay_active,
-    input wire [9:0] x, y
+    input wire [9:0] x, 
+    input wire [8:0] y
     );
     
     parameter [59:0] sda_line0 = 60'b000000000001000000100000000000110000000000000000001100011100;
@@ -26,22 +27,21 @@ module text_sda(
     
     always @(*) begin
         case (sda_off_y)
-            6'd0: sda_active = sda_line0[sda_off_x];
-            6'd1: sda_active = sda_line1[sda_off_x];
-            6'd2: sda_active = sda_line2[sda_off_x];
-            6'd3: sda_active = sda_line3[sda_off_x];
-            6'd4: sda_active = sda_line4[sda_off_x];
-            6'd5: sda_active = sda_line5[sda_off_x];
-            6'd6: sda_active = sda_line6[sda_off_x];
-            6'd7: sda_active = sda_line7[sda_off_x];
-            6'd8: sda_active = sda_line8[sda_off_x];
-            6'd9: sda_active = sda_line9[sda_off_x];
+            6'd0: sda_active = sda_line0[sda_off_x[5:0]];
+            6'd1: sda_active = sda_line1[sda_off_x[5:0]];
+            6'd2: sda_active = sda_line2[sda_off_x[5:0]];
+            6'd3: sda_active = sda_line3[sda_off_x[5:0]];
+            6'd4: sda_active = sda_line4[sda_off_x[5:0]];
+            6'd5: sda_active = sda_line5[sda_off_x[5:0]];
+            6'd6: sda_active = sda_line6[sda_off_x[5:0]];
+            6'd7: sda_active = sda_line7[sda_off_x[5:0]];
+            6'd8: sda_active = sda_line8[sda_off_x[5:0]];
+            6'd9: sda_active = sda_line9[sda_off_x[5:0]];
             default: sda_active = 0;
         endcase
     end
     
     assign overlay_active = (sda_off_x < 7'd61) & sda_active;
     
-    // TODO: Unused
-    // wire _unused = 0;
+    wire _unused = &{x[2:0], y[2:0]};
 endmodule

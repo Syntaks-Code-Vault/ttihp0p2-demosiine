@@ -29,8 +29,8 @@ module vga_controller (
     parameter H_SYNC_END      = H_DISPLAY + H_BOTTOM + H_SYNC - 1;
     parameter H_MAX           = H_DISPLAY + H_TOP + H_BOTTOM + H_SYNC - 1;
     
-    wire h_limit = (x == W_MAX) || rst_n;	// set when x is maximum
-    wire v_limit = (y == H_MAX) || rst_n;	// set when y is maximum
+    wire h_limit = (x == W_MAX) || ~rst_n;	// set when x is maximum
+    wire v_limit = (y == H_MAX) || ~rst_n;	// set when y is maximum
     
     // horizontal position counter
     always @(posedge clk) begin
@@ -53,4 +53,5 @@ module vga_controller (
     
     // frame_active is set when beam is in visible frame
     assign frame_active = (x < W_DISPLAY) && (y < H_DISPLAY);
+    
 endmodule

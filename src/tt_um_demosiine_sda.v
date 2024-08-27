@@ -14,7 +14,7 @@ module tt_um_demosiine_sda (
     input  wire       ena,      // always 1 when the design is powered, so you can ignore it
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
-);
+    );
 
     wire [1:0] r, g, b;
     wire audio;
@@ -32,7 +32,7 @@ module tt_um_demosiine_sda (
     
     graphics_engine graphics_engine_1 (
         .r(r), .g(g), .b(b),
-        .x(x), .y(y),
+        .x(x), .y(y[8:0]),
         .frame_active(frame_active), .v_sync(v_sync),
         .clk(clk), .rst_n(rst_n)
     );
@@ -50,7 +50,5 @@ module tt_um_demosiine_sda (
     assign uio_out = {audio, 7'd0};
     assign uio_oe  = 8'b1000_0000;
     
-    // TODO: Unused
-    // wire _unused = &{ena, ui_in, uio_in, x, y, frame_active};
-
+    wire _unused = &{ena, ui_in, uio_in, y[9]};
 endmodule

@@ -2,7 +2,8 @@
 
 module text_demosiine(
     output wire overlay_active,
-    input wire [9:0] x, y
+    input wire [9:0] x, 
+    input wire [8:0] y
     );
     
     // TODO: Try array-based optimization
@@ -26,21 +27,20 @@ module text_demosiine(
         
     always @(*) begin
         case (demosiine_off_y)
-            6'd0: demosiine_active = demosiine_line0[demosiine_off_x];
-            6'd1: demosiine_active = demosiine_line1[demosiine_off_x];
-            6'd2: demosiine_active = demosiine_line2[demosiine_off_x];
-            6'd3: demosiine_active = demosiine_line3[demosiine_off_x];
-            6'd4: demosiine_active = demosiine_line4[demosiine_off_x];
-            6'd5: demosiine_active = demosiine_line5[demosiine_off_x];
-            6'd6: demosiine_active = demosiine_line6[demosiine_off_x];
-            6'd7: demosiine_active = demosiine_line7[demosiine_off_x];
-            6'd8: demosiine_active = demosiine_line8[demosiine_off_x];
+            6'd0: demosiine_active = demosiine_line0[demosiine_off_x[5:0]];
+            6'd1: demosiine_active = demosiine_line1[demosiine_off_x[5:0]];
+            6'd2: demosiine_active = demosiine_line2[demosiine_off_x[5:0]];
+            6'd3: demosiine_active = demosiine_line3[demosiine_off_x[5:0]];
+            6'd4: demosiine_active = demosiine_line4[demosiine_off_x[5:0]];
+            6'd5: demosiine_active = demosiine_line5[demosiine_off_x[5:0]];
+            6'd6: demosiine_active = demosiine_line6[demosiine_off_x[5:0]];
+            6'd7: demosiine_active = demosiine_line7[demosiine_off_x[5:0]];
+            6'd8: demosiine_active = demosiine_line8[demosiine_off_x[5:0]];
             default: demosiine_active = 0;
         endcase
     end
     
     assign overlay_active = (demosiine_off_x < 7'd47) & demosiine_active;
     
-    // TODO: Unused
-    // wire _unused = 0;
+    wire _unused = &{x[2:0], y[2:0]};
 endmodule
