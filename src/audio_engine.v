@@ -17,7 +17,6 @@ module audio_engine(
     parameter [6:0] NOTE_D3 = 7'd42;
     parameter [6:0] NOTE_E3 = 7'd37;
     parameter [6:0] NOTE_F3 = 7'd35;
-    parameter [6:0] NOTE_G3 = 7'd31;
     parameter [6:0] NOTE_A3 = 7'd28;
     
     function [6:0] seq_lut (input [6:0] timestamp);
