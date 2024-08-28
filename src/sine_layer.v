@@ -140,4 +140,5 @@ module sine_layer (
         endcase
     end
     
+    wire _unused = &{qsine_flip_x[5:4]}
 endmodule

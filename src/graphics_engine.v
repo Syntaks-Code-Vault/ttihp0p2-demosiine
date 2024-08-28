@@ -31,7 +31,7 @@ module graphics_engine(
         .x(x), .y(y)
     );
     
-    assign sine_off_y = y[9:4] - 5'd3;
+    assign sine_off_y = y[8:4] - 5'd3;
     assign sine_bg_off_y = y[8:3] - 5'd2;
     
     sine_layer sine_layer1 (

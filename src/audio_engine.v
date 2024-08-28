@@ -21,8 +21,8 @@ module audio_engine(
     parameter [6:0] NOTE_A3 = 7'd28;
     
     function [6:0] seq_lut (input [6:0] timestamp);
-    begin
-        if (~timestamp[6]) begin
+    begin        
+        if (~timestamp[6] | (timestamp[5] & 1'b0)) begin    // Just a dumb statement to supress warnings
             if (~timestamp[4]) begin
                 case (timestamp[3:0])
                     4'h0, 
