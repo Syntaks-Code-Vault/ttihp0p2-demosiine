@@ -4,20 +4,18 @@ module audio_engine(
     output wire audio,
     input wire clk, rst_n
     );
-
-    //TODO: Eliminate NOTE_G3
     
-    parameter [6:0] NOTE_B1 = 7'd100;
-    parameter [6:0] NOTE_D2 = 7'd84;
-    parameter [6:0] NOTE_E2 = 7'd74;
-    parameter [6:0] NOTE_F2 = 7'd70;
-    parameter [6:0] NOTE_G2 = 7'd62;
-    parameter [6:0] NOTE_A2 = 7'd55;
-    parameter [6:0] NOTE_C3 = 7'd47;
-    parameter [6:0] NOTE_D3 = 7'd42;
-    parameter [6:0] NOTE_E3 = 7'd37;
-    parameter [6:0] NOTE_F3 = 7'd35;
-    parameter [6:0] NOTE_A3 = 7'd28;
+    localparam [6:0] NOTE_B1 = 7'd100;
+    localparam [6:0] NOTE_D2 = 7'd84;
+    localparam [6:0] NOTE_E2 = 7'd74;
+    localparam [6:0] NOTE_F2 = 7'd70;
+    localparam [6:0] NOTE_G2 = 7'd62;
+    localparam [6:0] NOTE_A2 = 7'd55;
+    localparam [6:0] NOTE_C3 = 7'd47;
+    localparam [6:0] NOTE_D3 = 7'd42;
+    localparam [6:0] NOTE_E3 = 7'd37;
+    localparam [6:0] NOTE_F3 = 7'd35;
+    localparam [6:0] NOTE_A3 = 7'd28;
     
     function [6:0] seq_lut (input [6:0] timestamp);
     begin        

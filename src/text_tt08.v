@@ -5,15 +5,15 @@ module text_tt08(
     input wire [8:0] x, y
     );
     
-    parameter [21:0] tt08_line0 = 22'b0000000000000001111100;
-    parameter [21:0] tt08_line1 = 22'b0000000000000010000010;
-    parameter [21:0] tt08_line2 = 22'b0111000111000100011111;
-    parameter [21:0] tt08_line3 = 22'b1000101001100100001000;
-    parameter [21:0] tt08_line4 = 22'b0111001010100101111001;
-    parameter [21:0] tt08_line5 = 22'b1000101100100100101001;
-    parameter [21:0] tt08_line6 = 22'b0111000111000100100001;
-    parameter [21:0] tt08_line7 = 22'b0000000000000010100010;
-    parameter [21:0] tt08_line8 = 22'b0000000000000000111100;
+    localparam [21:0] tt08_line0 = 22'b0000000000000001111100;
+    localparam [21:0] tt08_line1 = 22'b0000000000000010000010;
+    localparam [21:0] tt08_line2 = 22'b0111000111000100011111;
+    localparam [21:0] tt08_line3 = 22'b1000101001100100001000;
+    localparam [21:0] tt08_line4 = 22'b0111001010100101111001;
+    localparam [21:0] tt08_line5 = 22'b1000101100100100101001;
+    localparam [21:0] tt08_line6 = 22'b0111000111000100100001;
+    localparam [21:0] tt08_line7 = 22'b0000000000000010100010;
+    localparam [21:0] tt08_line8 = 22'b0000000000000000111100;
     
     wire [5:0] tt08_off_x;
     wire [5:0] tt08_off_y;

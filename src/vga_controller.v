@@ -10,24 +10,24 @@ module vga_controller (
     input wire clk, rst_n
     );
 
-    // declarations for TV-simulator sync parameters
+    // declarations for TV-simulator sync localparams
     // horizontal constants
-    parameter W_DISPLAY       = 640; // horizontal display width
-    parameter W_BACK          =  48; // horizontal left border (back porch)
-    parameter W_FRONT         =  16; // horizontal right border (front porch)
-    parameter W_SYNC          =  96; // horizontal sync width
+    localparam W_DISPLAY       = 640; // horizontal display width
+    localparam W_BACK          =  48; // horizontal left border (back porch)
+    localparam W_FRONT         =  16; // horizontal right border (front porch)
+    localparam W_SYNC          =  96; // horizontal sync width
     // vertical constants
-    parameter H_DISPLAY       = 480; // vertical display height
-    parameter H_TOP           =  33; // vertical top border
-    parameter H_BOTTOM        =  10; // vertical bottom border
-    parameter H_SYNC          =   2; // vertical sync # lines
+    localparam H_DISPLAY       = 480; // vertical display height
+    localparam H_TOP           =  33; // vertical top border
+    localparam H_BOTTOM        =  10; // vertical bottom border
+    localparam H_SYNC          =   2; // vertical sync # lines
     // derived constants
-    parameter W_SYNC_START    = W_DISPLAY + W_FRONT;
-    parameter W_SYNC_END      = W_DISPLAY + W_FRONT + W_SYNC - 1;
-    parameter W_MAX           = W_DISPLAY + W_BACK + W_FRONT + W_SYNC - 1;
-    parameter H_SYNC_START    = H_DISPLAY + H_BOTTOM;
-    parameter H_SYNC_END      = H_DISPLAY + H_BOTTOM + H_SYNC - 1;
-    parameter H_MAX           = H_DISPLAY + H_TOP + H_BOTTOM + H_SYNC - 1;
+    localparam W_SYNC_START    = W_DISPLAY + W_FRONT;
+    localparam W_SYNC_END      = W_DISPLAY + W_FRONT + W_SYNC - 1;
+    localparam W_MAX           = W_DISPLAY + W_BACK + W_FRONT + W_SYNC - 1;
+    localparam H_SYNC_START    = H_DISPLAY + H_BOTTOM;
+    localparam H_SYNC_END      = H_DISPLAY + H_BOTTOM + H_SYNC - 1;
+    localparam H_MAX           = H_DISPLAY + H_TOP + H_BOTTOM + H_SYNC - 1;
     
     wire h_limit = (x == W_MAX) || ~rst_n;	// set when x is maximum
     wire v_limit = (y == H_MAX) || ~rst_n;	// set when y is maximum
