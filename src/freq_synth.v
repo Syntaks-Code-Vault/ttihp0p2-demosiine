@@ -2,7 +2,8 @@
 
 module freq_synth(
     output wire audio,
-    input wire synth_clk, rst_n,
+    input wire synth_clk, 
+    input wire clk, rst_n,
     input wire [6:0] hp,
     input wire active
     );

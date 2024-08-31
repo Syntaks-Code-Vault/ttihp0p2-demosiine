@@ -132,7 +132,8 @@ module audio_engine(
     
     freq_synth freq_synth1 (
         .audio(audio),
-        .synth_clk(synth_clk), .rst_n(rst_n),
+        .synth_clk(synth_clk), 
+        .clk(clk), .rst_n(rst_n),
         .hp(seq_hp),
         .active(seq_active)
     );
