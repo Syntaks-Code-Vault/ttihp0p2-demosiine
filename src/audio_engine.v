@@ -94,7 +94,7 @@ module audio_engine(
     wire [6:0] seq_hp;
     
     reg [17:0] counter;
-    always @(posedge clk) begin
+    always @(posedge clk, negedge rst_n) begin
         if (~rst_n)
           counter <= 18'd0;
         else
