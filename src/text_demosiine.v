@@ -39,7 +39,7 @@ module text_demosiine(
         endcase
     end
     
-    assign overlay_active = (demosiine_off_x < 7'd47) & demosiine_active;
+    assign overlay_active = (demosiine_off_x < 7'd46) & demosiine_active;
     
     wire _unused = &{x[2:0], y[2:0]};
 endmodule

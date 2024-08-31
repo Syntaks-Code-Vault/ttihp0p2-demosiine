@@ -38,7 +38,7 @@ module text_tt08(
         endcase
     end
     
-    assign overlay_active = (tt08_off_x < 6'd23) & tt08_active;
+    assign overlay_active = (tt08_off_x < 6'd22) & tt08_active;
     
     wire _unused = &{x[2:0], y[2:0]};
 endmodule

@@ -41,7 +41,7 @@ module text_sda(
         endcase
     end
     
-    assign overlay_active = (sda_off_x < 7'd61) & sda_active;
+    assign overlay_active = (sda_off_x < 7'd60) & sda_active;
     
     wire _unused = &{x[2:0], y[2:0]};
 endmodule
