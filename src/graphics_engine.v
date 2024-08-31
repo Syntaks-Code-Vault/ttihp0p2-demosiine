@@ -18,7 +18,7 @@ module graphics_engine(
     
     always @ (posedge v_sync) begin
         if (~rst_n)
-            ctr <= 0;
+            ctr <= 10'd0;
         else
             ctr <= ctr + 1'd1;
     end

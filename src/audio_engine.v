@@ -104,7 +104,7 @@ module audio_engine(
     assign synth_clk = counter[10]; 
     assign seq_clk = counter[17];
     
-    always @(posedge seq_clk) begin
+    always @(posedge seq_clk, negedge rst_n) begin
         if (~rst_n) begin
             seq_ctr <= 5'd0;
             seq_time <= 7'd0;
