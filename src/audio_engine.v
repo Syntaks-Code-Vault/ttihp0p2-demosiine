@@ -111,7 +111,7 @@ module audio_engine(
         end else begin
             if (seq_ctr == 5'd19) begin
                 seq_ctr <= 5'd0;
-                seq_time <= seq_time + 1;
+                seq_time <= seq_time + 1'b1;
             end else
                 seq_ctr <= seq_ctr + 5'd1;
         end

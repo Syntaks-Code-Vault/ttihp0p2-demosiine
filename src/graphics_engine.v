@@ -16,7 +16,7 @@ module graphics_engine(
     reg [9:0] ctr;
     wire [9:0] anim_x, anim_2x;
     
-    always @ (posedge v_sync) begin
+    always @ (posedge v_sync, negedge rst_n) begin
         if (~rst_n)
             ctr <= 10'd0;
         else
