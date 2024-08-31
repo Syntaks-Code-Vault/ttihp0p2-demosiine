@@ -9,16 +9,29 @@ module freq_synth(
     
     reg audio_reg;
     reg [6:0] hp_ctr;
-    always @(posedge synth_clk, negedge rst_n) begin
+
+    reg en_synth_clk;
+    always @(posedge clk, negedge rst_n) begin
         if (~rst_n) begin
             audio_reg <= 1'd0;  
             hp_ctr <= 7'd1;
+            en_synth_clk <= 1'b1;
         end else begin
-            if (hp_ctr == hp) begin
-                hp_ctr <= 7'd1;
-                audio_reg <= ~audio_reg;
-            end else
-                hp_ctr <= hp_ctr + 1'd1;
+            if (en_synth_clk) begin
+                if (synth_clk) begin
+                    en_synth_clk <= 1'b0;
+                    if (hp_ctr == hp) begin
+                        hp_ctr <= 7'd1;
+                        audio_reg <= ~audio_reg;
+                    end else
+                        hp_ctr <= hp_ctr + 1'd1;
+                end
+            end else begin
+                if (~synth_clk)
+                    en_synth_clk <= 1'b1;
+            end
+
+            
         end
     end
     

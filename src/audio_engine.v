@@ -104,16 +104,26 @@ module audio_engine(
     assign synth_clk = counter[10]; 
     assign seq_clk = counter[17];
     
-    always @(posedge seq_clk, negedge rst_n) begin
+    reg en_seq_clk;
+    always @(posedge clk, negedge rst_n) begin
         if (~rst_n) begin
             seq_ctr <= 5'd0;
             seq_time <= 7'd0;
+            en_seq_clk <= 1'b1;
         end else begin
-            if (seq_ctr == 5'd19) begin
-                seq_ctr <= 5'd0;
-                seq_time <= seq_time + 1'b1;
-            end else
-                seq_ctr <= seq_ctr + 5'd1;
+            if (en_seq_clk) begin
+                if (seq_clk) begin
+                    en_seq_clk <= 1'b0;
+                    if (seq_ctr == 5'd19) begin
+                        seq_ctr <= 5'd0;
+                        seq_time <= seq_time + 1'b1;
+                    end else
+                        seq_ctr <= seq_ctr + 5'd1;
+                end
+            end else begin
+                if (~seq_clk)
+                    en_seq_clk <= 1'b1;
+            end
         end
     end
     
