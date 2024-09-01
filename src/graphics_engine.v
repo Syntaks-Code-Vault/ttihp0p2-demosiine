@@ -16,11 +16,23 @@ module graphics_engine(
     reg [9:0] ctr;
     wire [9:0] anim_x, anim_2x;
     
-    always @(posedge v_sync, negedge rst_n) begin
-        if (~rst_n)
+    reg en_v_sync;
+    always @(posedge clk, negedge rst_n) begin
+        if (~rst_n )begin
             ctr <= 10'd0;
-        else
-            ctr <= ctr + 1'd1;
+            en_v_sync <= 1'b1;
+        end else begin
+            if (en_v_sync) begin
+                if (v_sync) begin
+                    en_v_sync <= 1'b0;
+                    ctr <= ctr + 1'd1;
+                end
+            end else begin
+                if (~v_sync)
+                    en_v_sync <= 1'b1;
+            end
+        end
+            
     end
 
     assign anim_x = x + ctr;

@@ -13,8 +13,11 @@ It just works!
 
 ## How to test
 
-Just provide clock and reset
+- Connect the necessary peripherals
+- Provide a 25MHz clock
+- Reset the design
 
 ## External hardware
 
-VGA and Audio PMOD
+- Tiny VGA Pmod connected to output terminal (`uo_out`)
+- TT Audio Pmod connected to inout terminal (`uio_out`)
