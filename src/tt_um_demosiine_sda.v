@@ -34,7 +34,7 @@ module tt_um_demosiine_sda (
         .r(r), .g(g), .b(b),
         .x(x), .y(y[8:0]),
         .frame_active(frame_active), .v_sync(v_sync),
-        .rst_n(rst_n)
+        .clk(clk), .rst_n(rst_n)
     );
     
     audio_engine audio_engine_1 (

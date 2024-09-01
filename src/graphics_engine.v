@@ -5,7 +5,7 @@ module graphics_engine(
     input wire [9:0] x, 
     input wire [8:0] y,
     input wire frame_active, v_sync, 
-    input wire rst_n
+    input wire clk, rst_n
     );
     
     wire [5:0] sine_off_y, sine_bg_off_y;
