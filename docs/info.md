@@ -10,7 +10,9 @@ You can also include images in this folder and reference them in the markdown. E
 <!-- Disable this once Input section comes in -->
 ## Preview
 
-![DemoSiine Output Preview](DemoSiine.jpg)
+![DemoSiine Video Output Preview](DemoSiine.jpg)
+
+![DemoSiine Audio Output](Demosiine.mp3)
 
 ## How it works
 
