@@ -10,7 +10,7 @@ You can also include images in this folder and reference them in the markdown. E
 <!-- Disable this once Input section comes in -->
 ## Preview
 
-![DemoSiine Output Preview](docs/DemoSiine.jpg)
+![DemoSiine Output Preview](DemoSiine.jpg)
 
 ## How it works
 
