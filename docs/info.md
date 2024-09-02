@@ -9,13 +9,25 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-It just works!
+The project structure is as shown below
+```
+tt_um_demosiine_sda           : The main project :)
+├── vga_controller            : Just a refactor of the standard hvsync_generator
+├── graphics_engine           : Controls all the display output layers and animation
+│   ├── overlay_creator       : Generates the overlay text and shadow
+│   │   ├── text_demosiine    : Generates "DemoSiine" in big pixel letters
+│   │   ├── text_tt08         : Generates "TT08" in big pixel letters
+│   │   └── text_sda          : Generates "@SagarDevAchar" in big pixel letters
+│   └── sine_layer            : Produces a pixelated VIBGYORW sine wave
+└── audio_engine              : Produces the looping music note sequence
+    └── freq_synth            : Generates variable frequency square waves
+```
 
 ## How to test
 
 - Connect the necessary peripherals
 - Provide a 25MHz clock
-- Reset the design
+- Reset the design (if necessary)
 
 ## External hardware
 
