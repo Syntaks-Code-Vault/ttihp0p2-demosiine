@@ -7,6 +7,11 @@ You can also include images in this folder and reference them in the markdown. E
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
 
+<!-- Disable this once Input section comes in -->
+## Preview
+
+![DemoSiine Output Preview](docs/DemoSiine.jpg)
+
 ## How it works
 
 The project structure is as shown below
@@ -17,19 +22,31 @@ tt_um_demosiine_sda           : The main project :)
 │   ├── overlay_creator       : Generates the overlay text and shadow
 │   │   ├── text_demosiine    : Generates "DemoSiine" in big pixel letters
 │   │   ├── text_tt08         : Generates "TT08" in big pixel letters
-│   │   └── text_sda          : Generates "@SagarDevAchar" in big pixel letters
+│   │   └── text_sda          : Generates "@SagarDevAchar" in big pixel letters (self shoutout!)
 │   └── sine_layer            : Produces a pixelated VIBGYORW sine wave
 └── audio_engine              : Produces the looping music note sequence
     └── freq_synth            : Generates variable frequency square waves
 ```
 
-## How to test
+<!-- The `graphics_engine` (driven by the `vga_controller`, 640x480 @ 60Hz) is an on-demand RGB display pixel generator whose output can be altered using a few input pins. Previews of the different possible display outputs are provided in the last section of this documentation. -->
 
-- Connect the necessary peripherals
-- Provide a 25MHz clock
-- Reset the design (if necessary)
+The `graphics_engine` (driven by the `vga_controller`) is an on-demand RGB pixel generator which produces a display output of resolution 640x480 @ 60Hz.
+
+The `audio_engine` drives the `freq_synth` to produce a ~28 second looping sound track @ 140 BPM at the output.
 
 ## External hardware
 
-- Tiny VGA Pmod connected to output terminal (`uo_out`)
-- TT Audio Pmod connected to inout terminal (`uio_out`)
+- [TinyVGA Pmod](https://github.com/mole99/tiny-vga) connected to OUTPUT terminal (`uo_out`)
+    - VGA Display connected to the HD15 female connector of the Pmod
+- [TT Audio Pmod](https://github.com/MichaelBell/tt-audio-pmod) connected to BIDIR terminal (`uio_out`)
+<!-- - Some switches to the INPUT terminal (`ui_in`) -->
+
+## How to test
+
+- Connect the necessary peripherals
+- Provide a 25MHz clock to the top module `tt_um_demosiine_sda`
+- Reset the design (if necessary)
+- Enjoy the show :)
+<!-- - Tweak the inputs to customize your show -->
+
+<!-- ## Input Configurations -->
