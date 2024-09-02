@@ -24,7 +24,7 @@ module graphics_engine(
     wire mode_negative = video_modes[0];
 
     wire [5:0] bg_rgb = {6{mode_toggle_daynight}};
-    wire [5:0] fg_rgb = ~bg_rgb;
+    // wire [5:0] fg_rgb = ~bg_rgb;
     
     reg [9:0] ctr;
     wire [9:0] anim_x, anim_2x;

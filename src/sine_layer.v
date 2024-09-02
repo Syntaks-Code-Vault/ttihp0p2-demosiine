@@ -21,7 +21,7 @@ module sine_layer (
     localparam [15:0] qsine_line10 = 16'b0000000000000001;
 
     wire [5:0] bg_rgb = {6{daynight}};
-    // wire [5:0] fg_rgb = ~bg_rgb;
+    wire [5:0] fg_rgb = ~bg_rgb;
     
     function [3:0] sub_floor(input [3:0] a, b);
         sub_floor = (a < b) ? 4'd0 : (a - b);
