@@ -31,8 +31,6 @@ module freq_synth(
                 if (~synth_clk)
                     en_synth_clk <= 1'b1;
             end
-
-            
         end
     end
     

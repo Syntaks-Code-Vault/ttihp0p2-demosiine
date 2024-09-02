@@ -22,6 +22,8 @@ module tt_um_demosiine_sda (
     wire [9:0] x, y;
     wire h_sync, v_sync;
     wire frame_active;
+
+    wire mode_toggle_audio = ui_in[7];
     
     vga_controller vga_controller_1 (
         .x(x), .y(y),
@@ -34,12 +36,16 @@ module tt_um_demosiine_sda (
         .r(r), .g(g), .b(b),
         .x(x), .y(y[8:0]),
         .frame_active(frame_active), .v_sync(v_sync),
-        .clk(clk), .rst_n(rst_n)
+        .clk(clk), .rst_n(rst_n),
+
+        .video_modes({ui_in[6:0]})
     );
     
     audio_engine audio_engine_1 (
         .audio(audio),
-        .clk(clk), .rst_n(rst_n)
+        .clk(clk), .rst_n(rst_n),
+
+        .silence(mode_toggle_audio)
     );
     
     // All output pins must be assigned. If not used, assign to 0.
@@ -50,5 +56,5 @@ module tt_um_demosiine_sda (
     assign uio_out = {audio, 7'd0};
     assign uio_oe  = 8'b1000_0000;
     
-    wire _unused = &{ena, ui_in, uio_in, y[9]};
+    wire _unused = &{ena, uio_in, y[9]};
 endmodule

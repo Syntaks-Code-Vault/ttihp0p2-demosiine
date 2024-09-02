@@ -2,7 +2,9 @@
 
 module audio_engine(
     output wire audio,
-    input wire clk, rst_n
+    input wire clk, rst_n,
+
+    input wire silence
     );
     
     localparam [6:0] NOTE_B1 = 7'd100;
@@ -88,7 +90,7 @@ module audio_engine(
     end
     endfunction
     
-    wire synth_clk, seq_clk, seq_active;
+    wire synth, synth_clk, seq_clk, seq_active;
     reg [4:0] seq_ctr;
     reg [6:0] seq_time;
     wire [6:0] seq_hp;
@@ -96,9 +98,10 @@ module audio_engine(
     reg [17:0] counter;
     always @(posedge clk, negedge rst_n) begin
         if (~rst_n)
-          counter <= 18'd0;
+            counter <= 18'd0;
         else
-          counter <= counter + 1;
+            if (~silence)
+                counter <= counter + 1;
     end
     
     assign synth_clk = counter[10]; 
@@ -111,6 +114,7 @@ module audio_engine(
             seq_time <= 7'd0;
             en_seq_clk <= 1'b1;
         end else begin
+
             if (en_seq_clk) begin
                 if (seq_clk) begin
                     en_seq_clk <= 1'b0;
@@ -131,11 +135,13 @@ module audio_engine(
     assign seq_active = seq_ctr < 5'd10;
     
     freq_synth freq_synth1 (
-        .audio(audio),
+        .audio(synth),
         .synth_clk(synth_clk), 
         .clk(clk), .rst_n(rst_n),
         .hp(seq_hp),
         .active(seq_active)
     );
+
+    assign audio = synth & ~silence;
     
 endmodule
