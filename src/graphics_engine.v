@@ -22,7 +22,7 @@ module graphics_engine(
     
     wire [5:0] sine_off_y, sine_bg_off_y;
 
-    wire [7:0] xy_avg;
+    wire [3:0] xy_avg;
     wire [3:0] cycle_red_colour, cycle_green_colour, cycle_blue_colour;
     
     wire [5:0] overlay_rgb, sine_rgb, sine_bg_rgb, sine_rgb_dither, sine_bg_rgb_dither, bg_rgb;
@@ -31,7 +31,7 @@ module graphics_engine(
     reg [9:0] ctr;
     wire [9:0] anim_x, anim_2x;
 
-    assign xy_avg = anim_x[8:2] + y[8:1];
+    assign xy_avg = anim_x[5:2] + y[4:1];
     assign cycle_green_colour = xy_avg[3:0];
     assign cycle_red_colour = cycle_green_colour - 4'd6;
     assign cycle_blue_colour = cycle_green_colour + 4'd6;
