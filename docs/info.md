@@ -11,7 +11,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-The project structure is as shown below
+The project structure is as shown below:
 ```
 tt_um_demosiine_sda           : The main project :)
 ├── vga_controller            : Just a refactor of the standard hvsync_generator
@@ -44,20 +44,27 @@ The `audio_engine` drives the `freq_synth` to produce a ~28 second looping sound
 - Provide a 25MHz clock to the top module `tt_um_demosiine_sda`
 - Reset the design (if necessary)
 - Enjoy the show :)
-- Tweak the inputs to customize your show
-
-## Default Preview
-
-![DemoSiine Video Output Preview](DemoSiine.jpg)
+- Tweak the inputs to customize your show!
 
 ## Input Configurations
 
-The design takes in 8 digital inputs from the INPUT terminal to modify the on-screen graphics (and audio) to create funky visual effects. All inputs are expected to be LOW to render the output as shown in the default preview as shown above.
+The design takes in 8 digital inputs from the INPUT terminal to modify the on-screen graphics (and audio) to create funky visual effects. All inputs are expected to be LOW to render the output as shown in the default preview as shown below.
 
 The effect of each input pin is presented in the table below:
 
-|     Pin    | Functionality | When LOW | When HIGH |
-|:----------:|:-------------:|:--------:|:---------:|
-| `ui_in[7]` |               |          |           |
-|            |               |          |           |
-|            |               |          |           |
+|  **Input Pin** | **Functionality** | **When LOW** | **When HIGH** |
+|:--------------:|:-----------------:|:------------:|:-------------:|
+| **`ui_in[7]`** |                   |              |               |
+| **`ui_in[6]`** |                   |              |               |
+| **`ui_in[5]`** |                   |              |               |
+| **`ui_in[4]`** |                   |              |               |
+| **`ui_in[3]`** |                   |              |               |
+| **`ui_in[2]`** |                   |              |               |
+| **`ui_in[1]`** |                   |              |               |
+| **`ui_in[0]`** |                   |              |               |
+
+## Previews
+
+Provided below are a few previews generated from DemoSiine with the INPUT configuration which generated them:
+
+![DemoSiine Video Output Preview](DemoSiine.jpg)
