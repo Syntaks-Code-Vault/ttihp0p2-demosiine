@@ -108,5 +108,5 @@ module graphics_engine(
         )
     ) ^ {6{mode_negative}} : 6'b00_00_00;
     
-    wire _unused = &{sine_off_y[5], sine_bg_off_y[5], anim_x[9], anim_x[2:0], anim_2x[9:8], anim_2x[1:0], xy_avg[7:4]};
+    wire _unused = &{sine_off_y[5], sine_bg_off_y[5], anim_x[9], anim_x[2:0], anim_2x[9:8], anim_2x[1:0]};
 endmodule
