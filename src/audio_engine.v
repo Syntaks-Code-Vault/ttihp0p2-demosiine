@@ -101,7 +101,7 @@ module audio_engine(
             counter <= 18'd0;
         else
             if (~silence)
-                counter <= counter + 1;
+                counter <= counter + 1'd1;
     end
     
     assign synth_clk = counter[10]; 

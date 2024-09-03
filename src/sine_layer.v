@@ -3,9 +3,7 @@
 module sine_layer (
     output reg [5:0] sine_rgb,
     input wire [5:0] x,
-    input wire [4:0] y,
-
-    input wire daynight
+    input wire [4:0] y
     );
     
     localparam [15:0] qsine_line00 = 16'b1100000000000000;
@@ -19,9 +17,6 @@ module sine_layer (
     localparam [15:0] qsine_line08 = 16'b0000000000000100;
     localparam [15:0] qsine_line09 = 16'b0000000000000010;
     localparam [15:0] qsine_line10 = 16'b0000000000000001;
-
-    wire [5:0] bg_rgb = {6{daynight}};
-    wire [5:0] fg_rgb = ~bg_rgb;
     
     function [3:0] sub_floor(input [3:0] a, b);
         sub_floor = (a < b) ? 4'd0 : (a - b);
@@ -44,10 +39,10 @@ module sine_layer (
     begin
         if (inverted) begin
             if (qsine_off_x[4])
-                qsine_colour = bg_rgb;
+                qsine_colour = 6'b00_00_00;
             else begin
                 if (qsine_off_x[3])
-                    qsine_colour = bg_rgb;
+                    qsine_colour = 6'b00_00_00;
                 else begin
                     if (line[qsine_flip_x[3:0] + 4'd1])
                         qsine_colour = 6'b11_00_00;
@@ -64,13 +59,13 @@ module sine_layer (
                     else if (line[qsine_flip_x[3:0] + 4'd7])
                         qsine_colour = 6'b10_00_11;
                     else
-                        qsine_colour = bg_rgb;
+                        qsine_colour = 6'b00_00_00;
                 end
             end
         end else begin
             if (qsine_off_x[4]) begin
                 if (line[qsine_flip_x[3:0]])
-                    qsine_colour = fg_rgb;
+                    qsine_colour = 6'b11_11_11;
                 else if (line[add_ceil(qsine_flip_x[3:0], 4'd1)])
                     qsine_colour = 6'b11_00_00;
                 else if (line[add_ceil(qsine_flip_x[3:0], 4'd2)])
@@ -86,10 +81,10 @@ module sine_layer (
                 else if (line[add_ceil(qsine_flip_x[3:0], 4'd7)])
                     qsine_colour = 6'b10_00_11;
                 else
-                    qsine_colour = bg_rgb;
+                    qsine_colour = 6'b00_00_00;
             end else begin
                 if (line[qsine_off_x[3:0]])
-                    qsine_colour = fg_rgb;
+                    qsine_colour = 6'b11_11_11;
                 else if (line[sub_floor(qsine_off_x[3:0], 4'd1)])
                     qsine_colour = 6'b11_00_00;
                 else if (line[sub_floor(qsine_off_x[3:0], 4'd2)])
@@ -105,7 +100,7 @@ module sine_layer (
                 else if (line[sub_floor(qsine_off_x[3:0], 4'd7)])
                     qsine_colour = 6'b10_00_11;
                 else
-                    qsine_colour = bg_rgb;
+                    qsine_colour = 6'b00_00_00;
             end
         end
     end
@@ -141,7 +136,7 @@ module sine_layer (
             5'h10: sine_rgb = qsine_colour(qsine_line05, 1'd1);
             5'h11: sine_rgb = qsine_colour(qsine_line04, 1'd1);
             5'h12: sine_rgb = qsine_colour(qsine_line03, 1'd1);
-            default: sine_rgb = bg_rgb;
+            default: sine_rgb = 6'b00_00_00;
         endcase
     end
     
