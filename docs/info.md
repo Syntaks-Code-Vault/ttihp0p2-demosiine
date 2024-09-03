@@ -65,6 +65,6 @@ The effect of each input pin is presented in the table below:
 
 ## Previews
 
-Provided below are a few previews generated from DemoSiine with the INPUT configuration which generated them:
+Provided below are a some of my favourite previews generated from DemoSiine along with the INPUT configuration which generated them:
 
-![DemoSiine Video Output Preview](DemoSiine.jpg)
+![DemoSiine Video Output Preview](01_xx000000.jpg)
