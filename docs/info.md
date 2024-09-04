@@ -36,8 +36,8 @@ The **Audio Engine** drives the **Frequency Synth** to produce a ~28 second loop
 
 ## External hardware
 
-- [TinyVGA Pmod](https://github.com/mole99/tiny-vga) connected to OUTPUT terminal (`uo_out`)
-- [TT Audio Pmod](https://github.com/MichaelBell/tt-audio-pmod) connected to BIDIR terminal (`uio_out`)
+- [Leo's TinyVGA Pmod](https://github.com/mole99/tiny-vga) connected to OUTPUT terminal (`uo_out`)
+- [Mike's TT Audio Pmod](https://github.com/MichaelBell/tt-audio-pmod) connected to BIDIR terminal (`uio_out`)
 - Some switches to the INPUT terminal (`ui_in`)
 
 ## How to test
@@ -71,24 +71,24 @@ Provided below are a some of my favourite previews generated from DemoSiine alon
 
 <!-- **INPUT = `xx000000` (Default)** -->
 
-![DemoSiine Default Video Output Preview](preview_1.jpg)
+![DemoSiine Default Video Output Preview](preview_1.jpeg)
 
 <!-- **INPUT = `xx1x1000`** -->
 
-![DemoSiine Video Output Preview 2](preview_2.jpg)
+![DemoSiine Video Output Preview 2](preview_2.jpeg)
 
 <!-- **INPUT = `xx100001`** -->
 
-![DemoSiine Video Output Preview 3](preview_3.jpg)
+![DemoSiine Video Output Preview 3](preview_3.jpeg)
 
 <!-- **INPUT = `xx110110`** -->
 
-![DemoSiine Video Output Preview 4](preview_4.jpg)
+![DemoSiine Video Output Preview 4](preview_4.jpeg)
 
 <!-- **INPUT = `xx0x1001`** -->
 
-![DemoSiine Video Output Preview 5](preview_5.jpg)
+![DemoSiine Video Output Preview 5](preview_5.jpeg)
 
 <!-- **INPUT = `xx010110`** -->
 
-![DemoSiine Video Output Preview 6](preview_6.jpg)
+![DemoSiine Video Output Preview 6](preview_6.jpeg)
