@@ -28,11 +28,11 @@ tt_um_demosiine_sda           : The main project :)
     └── freq_synth            : Generates variable frequency square waves
 ``` -->
 
-The `graphics_engine` (driven by the `vga_controller`, 640x480 @ 60Hz) is an on-demand RGB display pixel generator whose output can be altered using a few input pins. Previews of the different possible display outputs are provided in the last section of this documentation.
+The **Graphics Engine** (driven by the **VGA Controller**, 640x480 @ 60Hz) is an on-demand RGB display pixel generator whose output can be altered using a few input pins. Previews of the different possible display outputs are provided in the last section of this documentation.
 
 <!-- The `graphics_engine` (driven by the `vga_controller`) is an on-demand RGB pixel generator which produces a display output of resolution 640x480 @ 60Hz. -->
 
-The `audio_engine` drives the `freq_synth` to produce a ~28 second looping sound track @ 140 BPM at the output.
+The **Audio Engine** drives the **Frequency Synth** to produce a ~28 second looping sound track @ 140 BPM at the output.
 
 ## External hardware
 
@@ -69,26 +69,26 @@ The effect of each input pin is presented in the table below:
 
 Provided below are a some of my favourite previews generated from DemoSiine along with the INPUT configuration which generated them:
 
-**INPUT = `xx000000` (Default)**
+<!-- **INPUT = `xx000000` (Default)** -->
 
-![DemoSiine Default Video Output Preview](01_xx000000.jpg)
+![DemoSiine Default Video Output Preview](preview_1.jpg)
 
-**INPUT = `xx1x1000`**
+<!-- **INPUT = `xx1x1000`** -->
 
-![DemoSiine Video Output Preview 2](02_xx1x1000.jpg)
+![DemoSiine Video Output Preview 2](preview_2.jpg)
 
-**INPUT = `xx100001`**
+<!-- **INPUT = `xx100001`** -->
 
-![DemoSiine Video Output Preview 3](03_xx100001.jpg)
+![DemoSiine Video Output Preview 3](preview_3.jpg)
 
-**INPUT = `xx110110`**
+<!-- **INPUT = `xx110110`** -->
 
-![DemoSiine Video Output Preview 4](04_xx110110.jpg)
+![DemoSiine Video Output Preview 4](preview_4.jpg)
 
-**INPUT = `xx0x1001`**
+<!-- **INPUT = `xx0x1001`** -->
 
-![DemoSiine Video Output Preview 5](05_xx0x1001.jpg)
+![DemoSiine Video Output Preview 5](preview_5.jpg)
 
-**INPUT = `xx010110`**
+<!-- **INPUT = `xx010110`** -->
 
-![DemoSiine Video Output Preview 6](06_xx010110.jpg)
+![DemoSiine Video Output Preview 6](preview_6.jpg)
