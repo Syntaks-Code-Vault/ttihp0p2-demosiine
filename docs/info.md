@@ -37,7 +37,6 @@ The `audio_engine` drives the `freq_synth` to produce a ~28 second looping sound
 ## External hardware
 
 - [TinyVGA Pmod](https://github.com/mole99/tiny-vga) connected to OUTPUT terminal (`uo_out`)
-    - VGA Display connected to the HD15 female connector of the Pmod
 - [TT Audio Pmod](https://github.com/MichaelBell/tt-audio-pmod) connected to BIDIR terminal (`uio_out`)
 - Some switches to the INPUT terminal (`ui_in`)
 
