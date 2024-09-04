@@ -13,7 +13,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 The project structure is as shown below:
 
-![DemoSiine Project Structure](Project Structure.jpg)
+![DemoSiine Project Structure](project_structure.jpg)
 
 <!-- ```
 tt_um_demosiine_sda           : The main project :)
@@ -70,6 +70,11 @@ The effect of each input pin is presented in the table below:
 
 Provided below are a some of my favourite previews generated from DemoSiine along with the INPUT configuration which generated them:
 
-| **Input State** | **Preview** |
-|:---------------:|:-----------:|
-|  **`xx000000`** | ![DemoSiine Video Output Preview](01_xx000000.jpg) |
+|      **Input Configuration**     | **Preview** |
+|:------------------------:|:-----------:|
+| **`xx000000` (Default)** | ![DemoSiine Default Video Output Preview](01_xx000000.jpg) |
+|  **`xx1x1000`** | ![DemoSiine Video Output Preview](02_xx1x1000.jpg) |
+|  **`xx100001`** | ![DemoSiine Video Output Preview](03_xx100001.jpg) |
+|  **`xx110110`** | ![DemoSiine Video Output Preview](04_xx110110.jpg) |
+|  **`xx0x1001`** | ![DemoSiine Video Output Preview](05_xx0x1001.jpg) |
+|  **`xx010110`** | ![DemoSiine Video Output Preview](06_xx010110.jpg) |
