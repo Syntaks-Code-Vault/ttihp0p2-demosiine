@@ -70,11 +70,20 @@ The effect of each input pin is presented in the table below:
 
 Provided below are a some of my favourite previews generated from DemoSiine along with the INPUT configuration which generated them:
 
-|      **Input Configuration**     | **Preview** |
-|:------------------------:|:-----------:|
-| **`xx000000` (Default)** | ![DemoSiine Default Video Output Preview](01_xx000000.jpg) |
-|  **`xx1x1000`** | ![DemoSiine Video Output Preview](02_xx1x1000.jpg) |
-|  **`xx100001`** | ![DemoSiine Video Output Preview](03_xx100001.jpg) |
-|  **`xx110110`** | ![DemoSiine Video Output Preview](04_xx110110.jpg) |
-|  **`xx0x1001`** | ![DemoSiine Video Output Preview](05_xx0x1001.jpg) |
-|  **`xx010110`** | ![DemoSiine Video Output Preview](06_xx010110.jpg) |
+**INPUT = `xx000000` (Default)**
+![DemoSiine Default Video Output Preview](01_xx000000.jpg)
+
+**INPUT = `xx1x1000`**
+![DemoSiine Video Output Preview 2](02_xx1x1000.jpg)
+
+**INPUT = `xx100001`**
+![DemoSiine Video Output Preview 3](03_xx100001.jpg)
+
+**INPUT = `xx110110`**
+![DemoSiine Video Output Preview 4](04_xx110110.jpg)
+
+**INPUT = `xx0x1001`**
+![DemoSiine Video Output Preview 5](05_xx0x1001.jpg)
+
+**INPUT = `xx010110`**
+![DemoSiine Video Output Preview 6](06_xx010110.jpg)
