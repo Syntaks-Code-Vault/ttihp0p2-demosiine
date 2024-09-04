@@ -12,7 +12,10 @@ You can also include images in this folder and reference them in the markdown. E
 ## How it works
 
 The project structure is as shown below:
-```
+
+![DemoSiine Project Structure](Project Structure.jpg)
+
+<!-- ```
 tt_um_demosiine_sda           : The main project :)
 ├── vga_controller            : Just a refactor of the standard hvsync_generator
 ├── graphics_engine           : Controls all the display output layers and animation
@@ -23,7 +26,7 @@ tt_um_demosiine_sda           : The main project :)
 │   └── sine_layer            : Produces a pixelated VIBGYORW sine wave
 └── audio_engine              : Produces the looping music note sequence
     └── freq_synth            : Generates variable frequency square waves
-```
+``` -->
 
 The `graphics_engine` (driven by the `vga_controller`, 640x480 @ 60Hz) is an on-demand RGB display pixel generator whose output can be altered using a few input pins. Previews of the different possible display outputs are provided in the last section of this documentation.
 
@@ -52,19 +55,21 @@ The design takes in 8 digital inputs from the INPUT terminal to modify the on-sc
 
 The effect of each input pin is presented in the table below:
 
-|  **Input Pin** | **Functionality** | **When LOW** | **When HIGH** |
+|  **Input Pin** |   **Parameter**   | **When LOW** | **When HIGH** |
 |:--------------:|:-----------------:|:------------:|:-------------:|
-| **`ui_in[7]`** |                   |              |               |
-| **`ui_in[6]`** |                   |              |               |
-| **`ui_in[5]`** |                   |              |               |
-| **`ui_in[4]`** |                   |              |               |
-| **`ui_in[3]`** |                   |              |               |
-| **`ui_in[2]`** |                   |              |               |
-| **`ui_in[1]`** |                   |              |               |
-| **`ui_in[0]`** |                   |              |               |
+| **`ui_in[7]`** |    Audio State    |     Play     |     Pause     |
+| **`ui_in[6]`** |  Animation State  |      Run     |      Stop     |
+| **`ui_in[5]`** |  Background Style |     Black    |  Rolling RGB  |
+| **`ui_in[4]`** |   Overlay Style   |   Cycle RGB  |  Rolling RGB  |
+| **`ui_in[3]`** |   Overlay State   |    Enabled   |    Disabled   |
+| **`ui_in[2]`** |   Big Sine State  |    Enabled   |    Disabled   |
+| **`ui_in[1]`** | Little Sine State |    Enabled   |    Disabled   |
+| **`ui_in[0]`** |  Colour Inversion |    Normal    |    Negative   |
 
 ## Previews
 
 Provided below are a some of my favourite previews generated from DemoSiine along with the INPUT configuration which generated them:
 
-![DemoSiine Video Output Preview](01_xx000000.jpg)
+| **Input State** | **Preview** |
+|:---------------:|:-----------:|
+|  **`xx000000`** | ![DemoSiine Video Output Preview](01_xx000000.jpg) |
